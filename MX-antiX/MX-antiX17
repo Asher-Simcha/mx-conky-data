@@ -34,6 +34,7 @@ conky.config = {
 --xftfont gentium:size=12
 --ftfont DejaVu Sans:size=10
     font = 'DejaVu Sans:bold:size=9',
+    font1 = 'DejaVu Sans:size=12',
 --xftfont DejaVu Sans:size=9
 
 -- Create own window instead of using desktop (required in nautilus, pcmanfm and rox desktops)
@@ -168,7 +169,7 @@ end
 
 conky.text = [[
 ${color3}${alignc}MX Linux
-${color8}$alignc${font DejaVu Sans:size=12}${template0 %H:%M}$font
+${color8}$alignc${font1}${template0 %H:%M}$font
 ${color}${alignc}${time %a %d %b}
 ${color}${alignc}Uptime: $uptime
 
