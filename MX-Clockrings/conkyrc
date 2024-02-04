@@ -43,6 +43,12 @@ conky.config = {
 	use_xft = true,
 	override_utf8_locale = true,
 	font = 'Roboto:size=8',
+    font1 = 'Roboto:size=10',
+    font2 = 'Roboto:size=15',
+    font3 = 'Roboto:size=18',
+    font4 = 'Roboto:size=30',
+    font5 = 'Roboto:size=42',
+	
 	xftalpha = 0.8,
 	uppercase = false,
 
@@ -65,7 +71,6 @@ conky.config = {
 	own_window_argb_visual = true,
 	own_window_colour = '000000',
 
-
 -- if_up_strictness link:  up | link | address
     if_up_strictness = 'address',
 
@@ -77,8 +82,6 @@ conky.config = {
 
 -- time template
    template7 = '%H:%M',
-
-
 
 };
 
@@ -92,18 +95,18 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${font Roboto:size=42}${time %e}
-${goto 100}${font Roboto:size=18}${color1}${voffset -75}${time %b}
-${font Roboto:size=10}${color1}${voffset 5}${time %A}${color1}
+${font5}${time %e}
+${goto 100}${font3}${color1}${voffset -75}${time %b}
+${font1}${color1}${voffset 5}${time %A}${color1}
 ${hr}
-${goto 100}${font Roboto:size=15}${color0}${voffset -40}${offset 50}${time %Y}
-${font Roboto:size=30}${voffset 20}${alignc}${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I:%M}${endif}
-${goto 175}${voffset -30}${font Roboto:size=10}${time %S}
+${goto 100}${font2}${color0}${voffset -40}${offset 50}${time %Y}
+${font4}${voffset 20}${alignc}${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I:%M}${endif}
+${goto 175}${voffset -30}${font1}${time %S}
 ${hr}
 ${image ./logo.png -p 150,10 -s 30x30}
-${color0}${font Roboto:size=8}Uptime: ${uptime_short}
-${color0}${font Roboto:size=8}Processes: ${processes}
-${color0}${font Roboto:size=8}Running: ${running_processes}
+${color0}${font}Uptime: ${uptime_short}
+${color0}${font}Processes: ${processes}
+${color0}${font}Running: ${running_processes}
 
 ${color1}${goto 75}${voffset 5}CPU
 ${color0}${goto 75}${cpu cpu0}%
@@ -131,9 +134,9 @@ ${color0}${goto 75}${downspeed $template3}
 ${color0}${goto 75}${upspeed $template3}\
 ${endif}${endif}${endif}${endif}\
 ${voffset 30}
-${voffset 0}${color1}${font Roboto:size=8}${nodename}
-${color1}${font Roboto:size=8}${execi 84600 awk 'NF{NF-=3}1' /etc/mx-version} $machine
-${color1}${font Roboto:size=8}Kernel: ${kernel}
+${voffset 0}${color1}${font}${nodename}
+${color1}${font}${execi 84600 awk 'NF{NF-=3}1' /etc/mx-version} $machine
+${color1}${font}Kernel: ${kernel}
 ${hr}
 ]];
 
