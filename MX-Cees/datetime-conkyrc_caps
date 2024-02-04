@@ -34,6 +34,8 @@ default_outline_color = '000000',
 
 use_xft = true,
 font = 'DejaVu Sans:size=9.5:bold',
+font1 = ':bold:size=12',
+font2 = 'DejaVu Sans:size=81:bold',
 xftalpha = 1,
 override_utf8_locale = true,
 uppercase = false,
@@ -63,12 +65,12 @@ alignment = 'top_right',
 
 conky.text = [[
 ###### SET 12H/24H ###
-# ${color1}${voffset -15}${font DejaVu Sans:size=81:bold}${alignc}${time %I}${font}
-${color1}${voffset -15}${font DejaVu Sans:size=81:bold}${alignc}${time %I}${font}
+# ${color1}${voffset -15}${font2}${alignc}${time %I}${font}
+${color1}${voffset -15}${font2}${alignc}${time %I}${font}
 ###### DAY+DATE ###
 ${color2}${voffset 5}${alignc}${time %A} ${color3}${time %d %b}${font}
 ###### MINUTE ###
-${color6}${voffset -15}${font DejaVu Sans:size=81:bold}${alignc}${time %M}${color}${font}
+${color6}${voffset -15}${font2}${alignc}${time %M}${color}${font}
 ###### MEM/CPU ###
 ${color3}${voffset 5}${alignc}mem ${color1}${memperc}%  ${color4}cpu ${color1}${cpu cpu0}%
 ###### BATTERY ###
@@ -78,7 +80,7 @@ ${if_existing /sys/class/power_supply/BAT1/status}bat ${voffset 1}${color6}${bat
 
 
 ###### CAPS LOCK ####
-${alignc}${if_match "${key_caps_lock}" == "On"}${color ORANGE}${font :bold:size=12}caps lock: ${key_caps_lock} ${endif}
+${alignc}${if_match "${key_caps_lock}" == "On"}${color ORANGE}${font1}caps lock: ${key_caps_lock} ${endif}
  
 ###### CORRECTION WIDGET HEIGHT ###
 ${voffset -90}
