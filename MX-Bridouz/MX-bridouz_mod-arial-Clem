@@ -47,16 +47,18 @@ conky.config = {
 	imlib_cache_size = 0,
 
 -- Colours
--- 1 - Default Color
+-- 1 - Default Color -- the previous was white and FFFFFF is the same so all white got converted to {color} aka default_color
 	default_color = 'FFFFFF',
 	color1 = 'DDDDDD',
---2 - DarkSlateGray (horizontal lines)
+--2 - DarkSlateGray (horizontal lines) 
 	color2 = '2F4F4F',
 -- 3 - Most progress bars, text
 	color3 = '888888',
 -- 4 - Title Blue
-	color4 = '5294e2',
-
+--	color4 = '5294e2', -- was not being used
+    color4 = '4F91FB',
+-- Most of the Print    
+    color5 = 'DimGray',
 
 -- Loading lua script for drawning rings
 --lua_load ./seamod_rings.lua
@@ -77,6 +79,7 @@ conky.config = {
    template3 = 'eth1',
 
 
+
 };
 
 -- fluxbox adjustment
@@ -88,35 +91,38 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
    conky.config.own_window_argb_visual = false
 end
 
+ 
+ 
+
 conky.text = [[
 
-${image ./sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}${font}${font4}${color 4F91FB}${execi 1000 cat /etc/mx-version}
+${image ./sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}${font}${font4}${color4}${execi 1000 cat /etc/mx-version}
 
-${font3}${color white}SYSTEM ${color2} ${hr 2}
-${font}${color DimGray}$sysname $kernel $alignr $machine
+${font3}${color}SYSTEM ${color2} ${hr 2}
+${font}${color5}$sysname $kernel $alignr $machine
 Uptime $alignr${uptime}
 File System $alignr${fs_type}
-${font}${color DimGray}/         used $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
-${font}${color DimGray}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
-#${font}${color DimGray}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
+${font}${color5}/         used $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${font}${color5}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
+#${font}${color5}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
 
-${font3}${color white}PROCESSORS ${color2}${hr 2}
-${font}${color DimGray}${cpubar cpu1}
+${font3}${color}PROCESSORS ${color2}${hr 2}
+${font}${color5}${cpubar cpu1}
 ${cpubar cpu2}
 
-${font3}${color white}MEMORY ${color2}${hr 2}
-${font}${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
+${font3}${color}MEMORY ${color2}${hr 2}
+${font}${color5}MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
 ${font}${top_mem name 1}${alignr}${top_mem mem 1}%
 ${font}${top_mem name 2}${alignr}${top_mem mem 2}%
 ${font}${top_mem name 3}${alignr}${top_mem mem 3}%
 
-${font3}${color white}NETWORK ${color2}${hr 2}
-${if_up $template3}${font}${color DimGray}IP on $template3 $alignr ${addr $template3}${else}\
-${if_up $template2}${font}${color DimGray}IP on $template2 $alignr ${addr $template2}${endif}${endif}
+${font3}${color}NETWORK ${color2}${hr 2}
+${if_up $template3}${font}${color5}IP on $template3 $alignr ${addr $template3}${else}\
+${if_up $template2}${font}${color5}IP on $template2 $alignr ${addr $template2}${endif}${endif}
 ${if_up $template1}\
-${font}${color DimGray}IP on $template1 $alignr ${addr $template1}${else}\
-${font}${color DimGray}IP on $template0 $alignr ${addr $template0}${endif}
+${font}${color5}IP on $template1 $alignr ${addr $template1}${else}\
+${font}${color5}IP on $template0 $alignr ${addr $template0}${endif}
 
 ${if_up $template0}\
 Down $alignr ${downspeed $template0} kb/s
@@ -141,7 +147,7 @@ Up $alignr ${upspeed $template3} kb/s
 
 Downloaded: $alignr  ${totaldown $template3}
 Uploaded: $alignr  ${totalup $template3}${endif}${endif}${endif}
-${font2}${color white}MUSIC ${color2}${hr 2}
+${font2}${color}MUSIC ${color2}${hr 2}
 ##
 ##Clementine using mediaplayer.py script; orig ${font1}
 ${if_existing ./mediaplayer.py}${if_match "${execi 10 python3 ./mediaplayer.py clementine -i}"=="yes"}
