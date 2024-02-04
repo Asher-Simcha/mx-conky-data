@@ -36,6 +36,17 @@ conky.config = {
 	color2 = 'fcfcfc',
 --##########################
 
+--###########Fonts#########
+font = 'Infini:pixelsize=17',
+font1 = 'Infini:pixelsize=19',
+font2 = 'Infini:pixelsize=20',
+font3 = 'Infini:pixelsize=21',
+font4 = 'Infini:pixelsize=22',
+font5 = 'Infini:pixelsize=42',
+font6 = 'Infini:pixelsize=58',
+font7 = 'Infini:pixelsize=90',
+--##########################
+
 --#############################################
 --  Output
 --#############################################
@@ -60,9 +71,9 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${voffset 10}${font Infini:pixelsize=90}${template0 %k:%M}${font}${voffset -84}${offset 40}${font Infini:pixelsize=42}${time %d} ${voffset -15}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 24}${font Infini:pixelsize=58}${offset -140}${time %a}${font}
+${voffset 10}${font7}${template0 %k:%M}${font}${voffset -84}${offset 40}${font5}${time %d} ${voffset -15}${font4}${time  %b} ${time '%y}${font}${voffset 24}${font6}${offset -140}${time %a}${font}
 
-${font Infini:pixelsize=17}${color1}${offset 30}${execi 1000 cat /etc/mx-version}
+${font}${color1}${offset 30}${execi 1000 cat /etc/mx-version}
 #bottom system line
-${offset 30}${font Infini:pixelsize=22}RAM ${voffset 12}${font Infini:pixelsize=21}$mem${voffset -11}${offset 60}    ${font Infini:pixelsize=20}${color2}CPU ${voffset 12}${font Infini:pixelsize=19}${cpu cpu0}% 
+${offset 30}${font4}RAM ${voffset 12}${font3}$mem${voffset -11}${offset 60}    ${font2}${color2}CPU ${voffset 12}${font1}${cpu cpu0}% 
 ]];
