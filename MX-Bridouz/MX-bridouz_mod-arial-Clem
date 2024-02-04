@@ -77,9 +77,7 @@ conky.config = {
    template1 = 'wlan1',
    template2 = 'eth0',
    template3 = 'eth1',
-
-
-
+   
 };
 
 -- fluxbox adjustment
@@ -91,62 +89,59 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
    conky.config.own_window_argb_visual = false
 end
 
- 
- 
-
 conky.text = [[
 
 ${image ./sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}${font}${font4}${color4}${execi 1000 cat /etc/mx-version}
 
 ${font3}${color}SYSTEM ${color2} ${hr 2}
-${font}${color5}$sysname $kernel $alignr $machine
-Uptime $alignr${uptime}
-File System $alignr${fs_type}
-${font}${color5}/         used $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
-${font}${color5}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
-#${font}${color5}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
+${font}${color5}$sysname $kernel ${alignr} $machine
+Uptime ${alignr}${uptime}
+File System ${alignr}${fs_type}
+${font}${color5}/         used $alignc ${fs_used /} / ${fs_size /} ${alignr} ${fs_used_perc /}%
+${font}${color5}/home used $alignc ${fs_used /home} / ${fs_size /home} ${alignr} ${fs_used_perc /home}%
+#${font}${color5}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} ${alignr} ${fs_used_perc /media/Data}%
 
 ${font3}${color}PROCESSORS ${color2}${hr 2}
 ${font}${color5}${cpubar cpu1}
 ${cpubar cpu2}
 
 ${font3}${color}MEMORY ${color2}${hr 2}
-${font}${color5}MEM $alignc $mem / $memmax $alignr $memperc%
+${font}${color5}MEM $alignc $mem / $memmax ${alignr} $memperc%
 $membar
 ${font}${top_mem name 1}${alignr}${top_mem mem 1}%
 ${font}${top_mem name 2}${alignr}${top_mem mem 2}%
 ${font}${top_mem name 3}${alignr}${top_mem mem 3}%
 
 ${font3}${color}NETWORK ${color2}${hr 2}
-${if_up $template3}${font}${color5}IP on $template3 $alignr ${addr $template3}${else}\
-${if_up $template2}${font}${color5}IP on $template2 $alignr ${addr $template2}${endif}${endif}
+${if_up $template3}${font}${color5}IP on $template3 ${alignr} ${addr $template3}${else}\
+${if_up $template2}${font}${color5}IP on $template2 ${alignr} ${addr $template2}${endif}${endif}
 ${if_up $template1}\
-${font}${color5}IP on $template1 $alignr ${addr $template1}${else}\
-${font}${color5}IP on $template0 $alignr ${addr $template0}${endif}
+${font}${color5}IP on $template1 ${alignr} ${addr $template1}${else}\
+${font}${color5}IP on $template0 ${alignr} ${addr $template0}${endif}
 
 ${if_up $template0}\
-Down $alignr ${downspeed $template0} kb/s
-Up $alignr ${upspeed $template0} kb/s
+Down ${alignr} ${downspeed $template0} kb/s
+Up ${alignr} ${upspeed $template0} kb/s
 
-Downloaded: $alignr  ${totaldown $template0}
-Uploaded: $alignr  ${totalup $template0}${else}\
+Downloaded: ${alignr}  ${totaldown $template0}
+Uploaded: ${alignr}  ${totalup $template0}${else}\
 ${if_up $template1}\
-Down $alignr ${downspeed $template1} kb/s
-Up $alignr ${upspeed $template1} kb/s
+Down ${alignr} ${downspeed $template1} kb/s
+Up ${alignr} ${upspeed $template1} kb/s
 
-Downloaded: $alignr  ${totaldown $template1}
-Uploaded: $alignr  ${totalup $template1}${else}\
+Downloaded: ${alignr}  ${totaldown $template1}
+Uploaded: ${alignr}  ${totalup $template1}${else}\
 ${if_up $template2}\
-Down $alignr ${downspeed $template2} kb/s
-Up $alignr ${upspeed $template2} kb/s
+Down ${alignr} ${downspeed $template2} kb/s
+Up ${alignr} ${upspeed $template2} kb/s
 
-Downloaded: $alignr  ${totaldown $template2}
-Uploaded: $alignr  ${totalup $template2}${else}\
-Down $alignr ${downspeed $template3} kb/s
-Up $alignr ${upspeed $template3} kb/s
+Downloaded: ${alignr}  ${totaldown $template2}
+Uploaded: ${alignr}  ${totalup $template2}${else}\
+Down ${alignr} ${downspeed $template3} kb/s
+Up ${alignr} ${upspeed $template3} kb/s
 
-Downloaded: $alignr  ${totaldown $template3}
-Uploaded: $alignr  ${totalup $template3}${endif}${endif}${endif}
+Downloaded: ${alignr}  ${totaldown $template3}
+Uploaded: ${alignr}  ${totalup $template3}${endif}${endif}${endif}
 ${font2}${color}MUSIC ${color2}${hr 2}
 ##
 ##Clementine using mediaplayer.py script; orig ${font1}
