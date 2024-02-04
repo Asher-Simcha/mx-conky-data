@@ -80,7 +80,7 @@ ${if_existing /sys/class/power_supply/BAT1/status}bat ${voffset 1}${color6}${bat
 
 
 ###### CAPS LOCK ####
-${alignc}${if_match "${key_caps_lock}" == "On"}${color ORANGE}${font1}caps lock: ${key_caps_lock} ${endif}
+${alignc}${if_match "${key_caps_lock}" == "On"}${color4}${font1}caps lock: ${key_caps_lock} ${endif}
  
 ###### CORRECTION WIDGET HEIGHT ###
 ${voffset -90}
