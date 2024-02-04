@@ -37,6 +37,11 @@ conky.config = {
 	use_xft = true,
 --    xftfont caviar dreams:size=8
 	font = 'Open Sans:size=9',
+	font1 = 'Open Sans:size=9',
+    font2 = 'Arial:bold:size=10',
+    font3 = 'Roboto-Light:bold:size=10',
+    font4 = 'Roboto-Light:bold:size=11',
+
 	xftalpha = 0.5,
 	uppercase = false,
 	imlib_cache_size = 0,
@@ -85,9 +90,9 @@ end
 
 conky.text = [[
 
-${image ./sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}$font${font Roboto-Light:bold:size=11}${color 4F91FB}${execi 1000 cat /etc/mx-version}
+${image ./sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}$font${font4}${color 4F91FB}${execi 1000 cat /etc/mx-version}
 
-${font Roboto-Light:bold:size=10}${color white}SYSTEM ${color2} ${hr 2}
+${font3}${color white}SYSTEM ${color2} ${hr 2}
 $font${color DimGray}$sysname $kernel $alignr $machine
 Uptime $alignr${uptime}
 File System $alignr${fs_type}
@@ -95,18 +100,18 @@ $font${color DimGray}/         used $alignc ${fs_used /} / ${fs_size /} $alignr 
 $font${color DimGray}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
 #$font${color DimGray}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
 
-${font Roboto-Light:bold:size=10}${color white}PROCESSORS ${color2}${hr 2}
+${font3}${color white}PROCESSORS ${color2}${hr 2}
 $font${color DimGray}${cpubar cpu1}
 ${cpubar cpu2}
 
-${font Roboto-Light:bold:size=10}${color white}MEMORY ${color2}${hr 2}
+${font3}${color white}MEMORY ${color2}${hr 2}
 $font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
 $font${top_mem name 1}${alignr}${top_mem mem 1}%
 $font${top_mem name 2}${alignr}${top_mem mem 2}%
 $font${top_mem name 3}${alignr}${top_mem mem 3}%
 
-${font Roboto-Light:bold:size=10}${color white}NETWORK ${color2}${hr 2}
+${font3}${color white}NETWORK ${color2}${hr 2}
 ${if_up $template3}$font${color DimGray}IP on $template3 $alignr ${addr $template3}${else}\
 ${if_up $template2}$font${color DimGray}IP on $template2 $alignr ${addr $template2}${endif}${endif}
 ${if_up $template1}\
@@ -136,11 +141,11 @@ Up $alignr ${upspeed $template3} kb/s
 
 Downloaded: $alignr  ${totaldown $template3}
 Uploaded: $alignr  ${totalup $template3}${endif}${endif}${endif}
-${font Arial:bold:size=10}${color white}MUSIC ${color2}${hr 2}
+${font2}${color white}MUSIC ${color2}${hr 2}
 ##
-##Clementine using mediaplayer.py script; orig ${font Open Sans:size=9}
+##Clementine using mediaplayer.py script; orig ${font1}
 ${if_existing ./mediaplayer.py}${if_match "${execi 10 python3 ./mediaplayer.py clementine -i}"=="yes"}
-${color3}${font Open Sans:size=9}${execpi 4 python3 ./mediaplayer.py clementine -tamlr -w 45}
+${color3}${font1}${execpi 4 python3 ./mediaplayer.py clementine -tamlr -w 45}
 ${if_match "${execi 4 python3 ./mediaplayer.py clementine -p}"=="Unknown"}\
 Progress: ${alignr}Unknown
 ${else}\
@@ -154,7 +159,7 @@ ${execi 20 python3 ./mediaplayer.py clementine -c /tmp/cover.jpg}${if_existing /
 
 ${endif}\
 ${else}
-${color3}${font Open Sans:size=9}Clementine Not Running\
+${color3}${font1}Clementine Not Running\
 ${endif}${endif}
 
 ]];
