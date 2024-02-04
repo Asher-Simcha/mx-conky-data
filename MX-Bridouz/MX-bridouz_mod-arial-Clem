@@ -90,33 +90,33 @@ end
 
 conky.text = [[
 
-${image ./sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}$font${font4}${color 4F91FB}${execi 1000 cat /etc/mx-version}
+${image ./sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}${font}${font4}${color 4F91FB}${execi 1000 cat /etc/mx-version}
 
 ${font3}${color white}SYSTEM ${color2} ${hr 2}
-$font${color DimGray}$sysname $kernel $alignr $machine
+${font}${color DimGray}$sysname $kernel $alignr $machine
 Uptime $alignr${uptime}
 File System $alignr${fs_type}
-$font${color DimGray}/         used $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
-$font${color DimGray}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
-#$font${color DimGray}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
+${font}${color DimGray}/         used $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${font}${color DimGray}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
+#${font}${color DimGray}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
 
 ${font3}${color white}PROCESSORS ${color2}${hr 2}
-$font${color DimGray}${cpubar cpu1}
+${font}${color DimGray}${cpubar cpu1}
 ${cpubar cpu2}
 
 ${font3}${color white}MEMORY ${color2}${hr 2}
-$font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
+${font}${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
-$font${top_mem name 1}${alignr}${top_mem mem 1}%
-$font${top_mem name 2}${alignr}${top_mem mem 2}%
-$font${top_mem name 3}${alignr}${top_mem mem 3}%
+${font}${top_mem name 1}${alignr}${top_mem mem 1}%
+${font}${top_mem name 2}${alignr}${top_mem mem 2}%
+${font}${top_mem name 3}${alignr}${top_mem mem 3}%
 
 ${font3}${color white}NETWORK ${color2}${hr 2}
-${if_up $template3}$font${color DimGray}IP on $template3 $alignr ${addr $template3}${else}\
-${if_up $template2}$font${color DimGray}IP on $template2 $alignr ${addr $template2}${endif}${endif}
+${if_up $template3}${font}${color DimGray}IP on $template3 $alignr ${addr $template3}${else}\
+${if_up $template2}${font}${color DimGray}IP on $template2 $alignr ${addr $template2}${endif}${endif}
 ${if_up $template1}\
-$font${color DimGray}IP on $template1 $alignr ${addr $template1}${else}\
-$font${color DimGray}IP on $template0 $alignr ${addr $template0}${endif}
+${font}${color DimGray}IP on $template1 $alignr ${addr $template1}${else}\
+${font}${color DimGray}IP on $template0 $alignr ${addr $template0}${endif}
 
 ${if_up $template0}\
 Down $alignr ${downspeed $template0} kb/s
