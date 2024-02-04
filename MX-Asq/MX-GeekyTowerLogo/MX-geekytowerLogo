@@ -5,6 +5,7 @@ conky.config = {
 -- Use Xft?
 	use_xft = true,
 	font = 'Droid Sans:size=7',
+    font1 = 'Arial Black:size=28',
 	xftalpha = 0.8,
 	text_buffer_size = 2048,
 
@@ -127,7 +128,7 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-   ${alignc}${font Arial Black:size=28}${color1}${template0 %H:%M}${font}
+   ${alignc}${font1}${color1}${template0 %H:%M}${font}
 
    ${alignc}${time %A %d %B %Y}
 
