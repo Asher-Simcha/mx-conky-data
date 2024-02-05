@@ -41,6 +41,10 @@ alignment = 'top_right',
 -- Requires mono font for spacing reasons
 -- xftfont Liberation Mono:bold:size=12
 	font = 'Noto Sans:size=11',
+    font1 = 'Noto Sans:size=6',
+    font2 = 'Noto Sans Bold:size=11',
+    font3 = 'Noto Sans:size=14',
+    font4 = 'Noto Sans:size=26',
 
 
 -- Alpha of Xft font. Must be a value at or between 1 and 0 ###
@@ -146,7 +150,7 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${hr 4}${font Noto Sans:size=6}
-${font Noto Sans Bold:size=11}${color2}${time %A}           ${font Noto Sans:size=26}${voffset -8}${alignr}${color1}${if_match "pmfix${time %p}" == "pmfix"} ${time $template0}${else} ${time %I}${endif}${color1}:${time %M}
-${font Noto Sans:size=14}${voffset -47}${color1}${time %d}${font Noto Sans:size=11}${color2} ${time %B}
-${voffset 6}${color2}${font Noto Sans:size=11}HDD ${color1}${fs_used_perc}%${color2}${alignc}${offset 30}Mem${color1} ${memperc}%${color2}${alignr}CPU${color1} ${cpu cpu0}%]];
+${hr 4}${font1}
+${font2}${color2}${time %A}           ${font4}${voffset -8}${alignr}${color1}${if_match "pmfix${time %p}" == "pmfix"} ${time $template0}${else} ${time %I}${endif}${color1}:${time %M}
+${font3}${voffset -47}${color1}${time %d}${font}${color2} ${time %B}
+${voffset 6}${color2}${font}HDD ${color1}${fs_used_perc}%${color2}${alignc}${offset 30}Mem${color1} ${memperc}%${color2}${alignr}CPU${color1} ${cpu cpu0}%]];
