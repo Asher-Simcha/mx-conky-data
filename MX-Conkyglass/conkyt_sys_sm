@@ -11,7 +11,7 @@ conky.config = {
 
 --borders
 	draw_borders = false,
-
+    color_default = 'ffffff',
 	color0 = '9FC951',
 	color1 = '9FC951',
 	color2 = 'ffffff',
