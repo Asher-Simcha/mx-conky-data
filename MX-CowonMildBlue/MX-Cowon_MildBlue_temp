@@ -17,6 +17,11 @@ conky.config = {
 --####################
 	use_xft = true,
     font = 'Roboto Light:size=100',
+    font1 = 'Roboto Light:bold:size=10',
+    font2 = 'Roboto Light:size=12',
+    font3 = 'Roboto Light:bold:size=11',
+    font4 = 'wqy-microhei:size=12',
+    font5 = 'wqy-microhei:bold:size=12',
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
@@ -82,16 +87,16 @@ ${lua hours}
 ${color2}${offset 36}${voffset -95}${time %M}
 ### date
 ${voffset -130}${offset 10}\
-${if_match "${lua cjk}" == "false"}${font Roboto Light:bold:size=11}${else}${font wqy-microhei:bold:size=12}${endif}${color1}${lua date}
+${if_match "${lua cjk}" == "false"}${font3}${else}${font5}${endif}${color1}${lua date}
 ### am/pm
 ${offset 150}${voffset -175}\
-${if_match "${lua cjk}" == "false"}${font Roboto Light:size=12}${else}${font wqy-microhei:size=12}${endif}${color2}${lua AM_PM}
+${if_match "${lua cjk}" == "false"}${font2}${else}${font4}${endif}${color2}${lua AM_PM}
 #system
 ${offset 0}${voffset 160}\
-${font Roboto Light:bold:size=10}${goto 25}${color3}hdd ${offset 2}${color4}${fs_used_perc /}%\
-${font Roboto Light:bold:size=10}${goto 105}${color3}temp ${offset 2}${color4}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C 
+${font1}${goto 25}${color3}hdd ${offset 2}${color4}${fs_used_perc /}%\
+${font1}${goto 105}${color3}temp ${offset 2}${color4}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C 
 ${voffset 2}\
-${font Roboto Light:bold:size=10}${goto 25}${color3}mem ${offset 2}${color4}${memperc}%\
-${font Roboto Light:bold:size=10}${goto 105}${color3}cpu${offset 6}${color4}${cpu}%
+${font1}${goto 25}${color3}mem ${offset 2}${color4}${memperc}%\
+${font1}${goto 105}${color3}cpu${offset 6}${color4}${cpu}%
 ${voffset -215}
 ]];
