@@ -8,6 +8,9 @@ conky.config = {
 	no_buffers = true,
 	use_xft = true,
 	font = 'Zekton:size=9',
+    font1 = 'Zekton:style=Bold:size=9',
+    font2 = 'Zekton:style=bold:size=12',
+    font3 = 'Zekton:style=bold:size=30',
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	own_window_class = 'Conky',
@@ -50,19 +53,19 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${goto 185}${voffset -8}${color0}${font Zekton:style=bold:size=12}${execi 3600 echo $USER}
+${goto 185}${voffset -8}${color0}${font2}${execi 3600 echo $USER}
 ${goto 60}${voffset 20}${color}${font}Temperature: 
-${goto 10}${voffset 75}${font Zekton:style=bold:size=30}\
+${goto 10}${voffset 75}${font3}\
 ${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I:%M}${endif}${font}
-${goto 166}${voffset -10}${font Zekton:style=Bold:size=9}Battery
-${alignc -48}${font Zekton:style=Bold:size=9}\
+${goto 166}${voffset -10}${font1}Battery
+${alignc -48}${font1}\
 ${if_existing /sys/class/power_supply/BAT0}${battery_percent BAT0}%\
 ${else}\
 ${if_existing /sys/class/power_supply/BAT1}${battery_percent BAT1}%${else}%${endif}${endif}
 ${goto 49}${voffset 45}CPU${voffset -5}${color}${goto 128}RAM
-${goto 130}${font Zekton:style=Bold:size=9}${memperc}%
-${goto 75}${voffset 20}${font Zekton:style=Bold:size=9}HDused
-${goto 80}${font Zekton:style=Bold:size=9}${fs_used /home}
+${goto 130}${font1}${memperc}%
+${goto 75}${voffset 20}${font1}HDused
+${goto 80}${font1}${fs_used /home}
 
 ${image ./lsd.png -p 10,0 -s 255x412}
 ]];
