@@ -2,6 +2,11 @@ conky.config = {
 	background = true,
 	use_xft = true,
 	font = 'Liberation Sans:size=9',
+	font1 = 'Roboto-Light:pixelsize=20',
+    font2 = 'Droid:pixelsize=30',
+    font3 = 'Roboto-Light - U:pixelsize=35',
+    font4 = 'Quicksand - U:pixelsize=70',
+
 	xftalpha = 1,
 	update_interval = 1.0,
 	total_run_times = 0,
@@ -55,15 +60,15 @@ end
 
 conky.text = [[
 #time
-${alignc}${color}${font Quicksand - U:pixelsize=70}\
+${alignc}${color}${font4}\
 ${if_match "pmfix${time %p}" == "pmfix"}${time ${template0}}${else}${time %I:%M}${endif}\
-${font}${font}${voffset -45}${offset 10}${font Roboto-Light - U:pixelsize=35}${time %P}${font}
+${font}${font}${voffset -45}${offset 10}${font3}${time %P}${font}
 
 
 
 #date & time
-${voffset 5}${alignc}${color2}${font Droid:pixelsize=30}${time %A   %x}${font}
+${voffset 5}${alignc}${color2}${font2}${time %A   %x}${font}
 
 #sys
-${offset 130}${font Roboto-Light:pixelsize=20}${offset 9}${offset 9}${color1}hdd ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}mem ${offset 9}${color}${memperc}%${offset 9}${offset 9}${color1}cpu${offset 9}${color}${cpu}%${font}
+${offset 130}${font1}${offset 9}${offset 9}${color1}hdd ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}mem ${offset 9}${color}${memperc}%${offset 9}${offset 9}${color1}cpu${offset 9}${color}${cpu}%${font}
 ]];
