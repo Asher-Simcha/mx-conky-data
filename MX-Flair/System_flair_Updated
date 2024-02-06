@@ -3,6 +3,12 @@ conky.config = {
 	background = true,
 	use_xft = true,
 	font = 'Roboto:size=9',
+    font1 = 'GeosansLight:size=15',
+    font2 = 'Dingytwo:size=17',
+    font3 = 'GeosansLight:size=17',
+    font4 = 'GeosansLight:size=22',
+    font5 = 'GeosansLight:size=25',
+    font6 = 'GeosansLight:light:size=70',
 	xftalpha = 0.8,
 	update_interval = 1,
 	total_run_times = 0,
@@ -86,14 +92,14 @@ end
 
 conky.text = [[
 
-${image ./images/whiteline.png -p 350,27 -s 3x150}${color0}${goto 124}${voffset -}${font GeosansLight:light:size=70}${if_match "pmfix${time %p}" == "pmfix"}${time %\
+${image ./images/whiteline.png -p 350,27 -s 3x150}${color0}${goto 124}${voffset -}${font6}${if_match "pmfix${time %p}" == "pmfix"}${time %\
 H}:${time %M}${else}${time %I}:${time %M}${endif}
-${offset 180}${voffset -55}${font GeosansLight:size=17}${time %a %d %b}${color}
-${color0}${offset 380}${voffset -177}${font GeosansLight:size=25}${font GeosansLight:size=22}
-#${offset 400}${voffset 5}${font GeosansLight:size=15}$acpitemp'C
-${offset 400}${voffset 5}${font GeosansLight:size=15}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C
+${offset 180}${voffset -55}${font3}${time %a %d %b}${color}
+${color0}${offset 380}${voffset -177}${font5}${font4}
+#${offset 400}${voffset 5}${font1}$acpitemp'C
+${offset 400}${voffset 5}${font1}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C
 ${offset 400}${voffset 10}${cpu cpu0}% / 100%
-${offset 400}${voffset 4}$memfree / $memmax${font GeosansLight:size=15}\
+${offset 400}${voffset 4}$memfree / $memmax${font1}\
 ${if_up $template0}
 ${offset 400}${voffset 5}${upspeed $template0} kb/s / ${totalup $template0}
 ${offset 400}${voffset 5}${downspeed $template0} kb/s / ${totaldown $template0}${color}${else}\
@@ -107,9 +113,9 @@ ${offset 400}${voffset 5}${upspeed $template3} kb/s / ${totalup $template3}
 ${offset 400}${voffset 5}${downspeed $template3} kb/s / ${totaldown $template3}${color}\
 ${endif}${endif}${endif}
 
-${color0}${goto 373}${voffset -162}${font Dingytwo:size=17}M$font 
-${goto 373}${voffset 7}${font Dingytwo:size=17}7$font 
-${goto 373}${voffset 1}${font Dingytwo:size=17}O$font 
-${goto 373}${voffset 1}${font Dingytwo:size=17}5$font 
-${goto 373}${voffset 1}${font Dingytwo:size=17}4$font${color}
+${color0}${goto 373}${voffset -162}${font2}M$font 
+${goto 373}${voffset 7}${font2}7$font 
+${goto 373}${voffset 1}${font2}O$font 
+${goto 373}${voffset 1}${font2}5$font 
+${goto 373}${voffset 1}${font2}4$font${color}
 ]];
