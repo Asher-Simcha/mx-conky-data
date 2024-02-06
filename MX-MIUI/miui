@@ -16,6 +16,9 @@ conky.config = {
 --####################
 	use_xft = true,
 	font = 'AvantGarde LT Medium:size=40',
+	font1 = 'AvantGarde LT Medium:size=10',
+    font2 = 'AvantGarde LT Medium:size=38',
+
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 
@@ -70,8 +73,8 @@ conky.text = [[
 ${voffset 11} ${goto 30}${if_match "pmfix${time %p}" == "pmfix"}${time %\
 H}${else}${time %I}${endif} ${goto 110}${time %M}
 ${image ./b.png -p 0,0 -s 188x100}
-${voffset -175} ${goto 224}${font AvantGarde LT Medium:size=10}${offset 12}${time %a} ${font}
-${font AvantGarde LT Medium:size=38}${voffset -60}${goto 224}${time %d}
+${voffset -175} ${goto 224}${font1}${offset 12}${time %a} ${font}
+${font2}${voffset -60}${goto 224}${time %d}
 ${image ./c.png -p 200,0 -s 93x100}
 
 ]];
