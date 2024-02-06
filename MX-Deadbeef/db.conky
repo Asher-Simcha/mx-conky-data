@@ -66,12 +66,12 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${voffset 7}${goto 140}${font3}${execi 2 ${template0  "%t"}}$font
+${voffset 7}${goto 140}${font3}${execi 2 ${template0  "%t"}}${font}
 ${goto 140}${execi 2 ${template0  "%a"}}
 ${goto 140}${execi 2 ${template0  "%b"}}
-${goto 140}${font2}${execi 2 ${template0  "%y"}}$font
+${goto 140}${font2}${execi 2 ${template0  "%y"}}${font}
 ${goto 140}${font1}${execi 1 ${template0  "%e"}}\
-${offset 2}/${offset 2}${execi 1 ${template0  "%l"}}$font
+${offset 2}/${offset 2}${execi 1 ${template0  "%l"}}${font}
 ${if_existing ./db-cover.sh}${texeci 20 sh ./db-cover.sh}${endif}\
 ${if_existing ./Vinyl/top.png}${image ./Vinyl/top.png}${endif}${if_existing ./Vinyl/base.png}${image ./Vinyl/base.png}${endif}
 
