@@ -42,6 +42,12 @@ conky.config = {
 -- Text settings #
 	use_xft = true,
 	font = 'Roboto:size=8',
+	font1 = 'Roboto:size=9',
+    font2 = 'Roboto:size=16',
+    font3 = 'Roboto:size=18',
+    font4 = 'Roboto:size=20',
+    font5 = 'Roboto:size=38',
+
 	xftalpha = 0.5,
 
 	uppercase = false,
@@ -87,8 +93,8 @@ end
 conky.text = [[
 
 
-${voffset -38}${color1}${font Roboto:size=16}${time %A}${font}${voffset -6}${alignr 30}${color0}${font Roboto:size=38}${time %e}${font}
-${color0}${voffset -30}${color0}${font Roboto:size=18}${time %b}${font}${voffset -3}  ${color0}${font Roboto:size=20}${time %Y}${font}${color1}
+${voffset -38}${color1}${font2}${time %A}${font}${voffset -6}${alignr 30}${color0}${font5}${time %e}${font}
+${color0}${voffset -30}${color0}${font3}${time %b}${font}${voffset -3}  ${color0}${font4}${time %Y}${font}${color1}
 ${voffset 160}${hr}
 ${image ./MX_logo.png -p 120,255 -s 75x75}
 ${voffset 0}
@@ -120,10 +126,10 @@ ${endif}${endif}${endif}
 
 ${hr}
 
-${color2}${font Roboto:size=9}Uptime: ${uptime_short}
-${color2}${font Roboto:size=9}Processes: ${processes}
-${color2}${font Roboto:size=9}Running: ${running_processes}
-${color2}${font Roboto:size=9}${alignr}${nodename}
-${color2}${font Roboto:size=9}${alignr}${execi 86400 cat /etc/mx-version}  
-${color2}${font Roboto:size=9}${alignr}Kernel: ${kernel}
+${color2}${font1}Uptime: ${uptime_short}
+${color2}${font1}Processes: ${processes}
+${color2}${font1}Running: ${running_processes}
+${color2}${font1}${alignr}${nodename}
+${color2}${font1}${alignr}${execi 86400 cat /etc/mx-version}  
+${color2}${font1}${alignr}Kernel: ${kernel}
 ]];
