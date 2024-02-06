@@ -17,6 +17,13 @@ conky.config = {
 	use_xft = true,
 --  font = 'Dinreg:size=100',
     font = 'Roboto-Light:size=100',
+    font1 = 'Roboto-Light:size=12',
+    font2 = 'Roboto-Light:bold:size=12',
+    font3 = 'RobotoMono-Light:bold:pixelsize=12',
+    font4 = 'wqy-microhei:size=12',
+    font5 = 'wqy-microhei:bold:size=12',
+    font6 = 'Roboto-Light:bold:pixelsize=14',
+
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
