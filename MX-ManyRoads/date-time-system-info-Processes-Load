@@ -36,10 +36,6 @@ conky.config = {
 	no_buffers = true,
 	uppercase = false,
 
-	color0 = 'white',
-
-	color2 = 'white',
-	color3 = '1793d0',
 
 
 	pad_percents = 2,
@@ -57,15 +53,22 @@ conky.config = {
 	gap_x = 343,
 	gap_y = 0,
 
+	color0 = 'white',
 	color1 = 'white',--Month color
-	color2 = 'white',--Year  color
-	color3 = 'white',--Weekdays color
-	color4 = 'FFE3A0',--Current weekday color
-	color5 = 'white',--Days of month color
-	color6 = '41D175',--Current day color
-	color7 = '5294E2',--blue
-	color8 = '0EFF00',--green
-	color9 = 'FFF200',--yellow
+	color2 = '5294E2',--blue
+	color3 = '0EFF00',--green
+	color4 = 'tan', --tan
+	color5 = 'tan1', --tan1
+	color6 = '34BE5B',
+	color7 = 'lightgrey',
+--	color2 = 'white',--Year  color
+--	color3 = 'white',--Weekdays color
+--	color4 = 'FFE3A0',--Current weekday color
+--	color5 = 'white',--Days of month color
+--	color6 = '41D175',--Current day color
+--	color7 = '5294E2',--blue 
+--	color8 = '0EFF00',--green
+--	color9 = 'FFF200',--yellow
 
 	double_buffer = true,
 
@@ -88,31 +91,31 @@ end
 conky.text = [[
 #--- New Clock- version----
 # pmfix with backslash-escaped newline 
-${color tan1}${font Infini:pixelsize=80}${if_match "pmfix${time %p}" == "pmfix"}${time $template0}${else}${time %l:%M}${endif}\
+${color5}${font Infini:pixelsize=80}${if_match "pmfix${time %p}" == "pmfix"}${time $template0}${else}${time %l:%M}${endif}\
 ${font}${voffset -89}${offset 20}${color1}${font Infini:pixelsize=42}${time %d}${voffset -21}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 15}${font Infini:pixelsize=58}${offset -100}${time %a}${font}
 #-----------------------System information-----------------------
 ${voffset 15}
-${image img/information.png -p 0,115 -s 30x30}${offset 35}${font Good Times:size=12}${color Tan1}SYSTEM INFORMATION ${color}${hr 2}${font}
+${image img/information.png -p 0,115 -s 30x30}${offset 35}${font Good Times:size=12}${color5}SYSTEM INFORMATION ${color}${hr 2}${font}
 
 ${font}${color1}${offset 30}${execi 3600 cat /etc/mx-version}
-#${goto 80}${color #34BE5B}${font Ubuntu-Title:size=11}Manjaro${font}${color} | xfce 4.13
+#${goto 80}${color6}${font Ubuntu-Title:size=11}Manjaro${font}${color} | xfce 4.13
 ${goto 80}User: ${execi 3600 echo $USER}
 ${goto 80}Kernel: $kernel $machine
 ${goto 80}Uptime: $uptime
 #${font DJB Get Digital:size=30}${tab 90}${time %H:%M:%S}
 ${if_existing /sys/class/power_supply/BAT0}\
-${goto 80}${color}Battery: ${color8}${battery_bar 10,100 BAT0} ${color0}${battery_percent BAT0}%
+${goto 80}${color}Battery: ${color3}${battery_bar 10,100 BAT0} ${color0}${battery_percent BAT0}%
 ${else}\
 ${if_existing /sys/class/power_supply/BAT1}\
-${goto 80}${color}Battery: ${color8}${battery_bar 10,100 BAT1} ${color0}${battery_percent BAT1}%
+${goto 80}${color}Battery: ${color3}${battery_bar 10,100 BAT1} ${color0}${battery_percent BAT1}%
 ${endif}${endif}  ${image img/MX_logo.png -p 5,165 -s 64x64}
 #-----------------------Processes & Load information-----------------------
 ${image img/gearwheels.png -p 0,235 -s 30x30}
-${offset 35}${font Good Times:size=12}${color Tan1}PROCESSES & LOAD ${color}${hr 2}${font}
+${offset 35}${font Good Times:size=12}${color5}PROCESSES & LOAD ${color}${hr 2}${font}
 ${offset 5}${voffset 5}${color}Avg. Load: ${loadavg 1}
 #${running_processes} ${running_threads} ${processes}
 ${hr 1}${font}
-${color lightgrey}${font Futurist Fixed-width:size=10:bold}${color7}${offset 5}PROCESS          CPU${alignr}   MEMORY         ${offset -5}PID
+${color7}${font Futurist Fixed-width:size=10:bold}${color2}${offset 5}PROCESS          CPU${alignr}   MEMORY         ${offset -5}PID
 ${voffset -10}${color0}${hr 1}${font}${color}${font monofur:size=11}
 ${voffset -3}#
 ${offset 5}${top name 1} ${alignr}${top cpu 1}%      ${top mem_res 1}     ${alignr}${offset -5}${top pid 1}
