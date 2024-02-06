@@ -18,7 +18,7 @@
 
 awk  '$2 ~ /[/]media/ { print $2 }' /proc/mounts | while read media; do
 echo '${voffset -8}${color}'"$media":
-echo '${voffset 4}${fs_used' "$media"'} of ${fs_size' "$media"'} ${alignr}${color5}${fs_bar 8,90' "$media}"
+echo '${voffset 4}${fs_used' "$media"'} of ${fs_size' "$media"'} ${alignr}${color7}${fs_bar 8,90' "$media}"
 echo ''
 done
 

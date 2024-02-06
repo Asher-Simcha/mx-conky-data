@@ -44,7 +44,9 @@ conky.config = {
 	color2 = 'E9E101',
 	color3 = '18FF00',
 	color4 = '66aaff',
-	color5 = 'FFF600',
+	color5 = 'E9E9E9',
+	color6 = 'aaddff',
+	color7 = 'FFF600',
 	
 -- network $templates
     if_up_strictness = 'address',
@@ -64,8 +66,6 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
    conky.config.own_window_argb_visual = false
 end
 
-
-
 conky.text = [[
 
 ${alignc -0}${font4}${color0}MX Linux${font}${color}
@@ -74,13 +74,13 @@ ${voffset -4}${color0}${font3}DATE ${color1}${hr 3}${color}${font}
 ${color}${font2}${alignc}${time %A}, ${if_match "pmfix${time %p}" == "pmfix"}${time %d %B %Y    %k:%M}${else}${time %d %B %Y    %l:%M %P}${endif}${font}${color} 
 
 # SYS
-${voffset -8}${font3}${color0}SYSTEM ${color EC0100}${hr 3}${color}${font}
+${voffset -8}${font3}${color0}SYSTEM ${color1}${hr 3}${color}${font}
 Kernel${alignr}${sysname} ${kernel} 
 OS ${alignr}${head /etc/mx-version 1 86400}\
 Uptime ${alignr} ${uptime}
 
 # MEMORY
-${voffset -8}${font3}${color0}MEMORY ${color EC0100}${hr 3}
+${voffset -8}${font3}${color0}MEMORY ${color1}${hr 3}
 ${color2}${membar 4} 
 ${color}${font1}Used:${alignr}${font} ${mem} of ${memmax}
 ${color}${font1}Free:${alignr}${font} ${memeasyfree}
@@ -99,7 +99,7 @@ ${top_mem name 4}${alignr}${top_mem cpu 4} %
 ${voffset -13}${alignr}${offset -60}${top_mem mem 4} %
 
 # CPU
-${voffset -8}${font3}${color0}CPU ${color EC0100}${hr 3}
+${voffset -8}${font3}${color0}CPU ${color1}${hr 3}
 #${color}${font}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq} ${freq_g cpu0}GHz ${alignr} ${cpu}%  
 ${color}${font}${execi 86400 sed -ne '/model name.*: /{s///;s/@.*//;p;q}' /proc/cpuinfo} ${freq_g cpu0}GHz ${alignr} ${cpu}%  
 ${font}Core 0  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 0' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu0}${color}
@@ -121,7 +121,7 @@ ${voffset -13}${alignr}${offset -60}${top mem 4} %
 #${voffset -13}${alignr}${offset -60}${top mem 5} %
 
 # NETWORK
-${voffset -8}${font3}${color0}NETWORK ${color EC0100}${hr 3}${color}
+${voffset -8}${font3}${color0}NETWORK ${color1}${hr 3}${color}
 #${color}${font1}External IP ${font}${alignr}${execi 60 curl http://google.com --connect-timeout 2 | grep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"}${font}
 #${voffset -14}${alignc}${execpi 4 echo "\${font}\${color}ping: \${font1}\${color6}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 
@@ -141,24 +141,24 @@ ${voffset -14}${alignc}${downspeedgraph $template1 10,120  ff0000 0000ff}
 
 ${endif}${endif}${if_up $template2}${voffset -10}${font1}WiFi  ${font}${wireless_bitrate $template2} ${alignr} ${addr $template2}
 ${voffset -14}${alignc}${wireless_essid $template2}
-${alignc}${color2}${wireless_link_bar 4,260 $template2}${color E9E9E9} 
+${alignc}${color2}${wireless_link_bar 4,260 $template2}${color5} 
 ↑ ${upspeedf $template2} kb/s ${alignr} ${totalup $template2}
 ${voffset -14}${alignc}${upspeedgraph $template2 10,120 ff0000 0000ff}
 ↓ ${downspeedf $template2} kb/s ${alignr} ${totaldown $template2}
 ${voffset -14}${alignc}${downspeedgraph $template2 10,120 ff0000 0000ff}${else}\
 ${voffset -10}${font1}WiFi ${font}${wireless_bitrate $template3} ${alignr} ${addr $template3}
 ${voffset -14}${alignc}${wireless_essid $template3}
-${alignc}${color2}${wireless_link_bar 4,260 $template3}${color E9E9E9} 
+${alignc}${color2}${wireless_link_bar 4,260 $template3}${color5} 
 ↑ ${upspeedf $template3} kb/s ${alignr} ${totalup $template3}
 ${voffset -14}${alignc}${upspeedgraph $template3 10,120 ff0000 0000ff}
 ↓ ${downspeedf $template3} kb/s ${alignr} ${totaldown $template3}
 ${voffset -14}${alignc}${downspeedgraph $template3 10,120 ff0000 0000ff}${endif}
 
 # HDD
-${voffset -8}${font3}${color0}DISKS ${color EC0100}${hr 3}
+${voffset -8}${font3}${color0}DISKS ${color1}${hr 3}
 ${color}${font1}${font1}\
-ROOT$font                    ${color}${fs_used /} / ${fs_size /}${alignr}${fs_type /}
-${color aaddff}write: ${diskio_write }${color6}${alignc -20} read:${diskio_read }${color}${alignr} ${fs_used_perc /}%   
+ROOT${font}                    ${color}${fs_used /} / ${fs_size /}${alignr}${fs_type /}
+${color6}write: ${diskio_write }${color6}${alignc -20} read:${diskio_read }${color}${alignr} ${fs_used_perc /}%   
 ${color2}${fs_bar /}${color}
 ${if_mounted /home}
 ${voffset -10}${font1}\
