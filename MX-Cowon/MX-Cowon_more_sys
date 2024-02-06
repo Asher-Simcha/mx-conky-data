@@ -15,7 +15,10 @@ conky.config = {
 -- - Text settings - #
 --####################
 	use_xft = true,
-	font = 'Dinreg:size=180',
+    font = 'Dinreg:size=180',
+	font1 = 'Droid Sans:size=16',
+    font2 = 'Roboto-Light:pixelsize=18',
+
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
@@ -71,7 +74,7 @@ conky.text = [[
 ${if_match "pmfix${time %p}" == "pmfix"}${time %\
 H}${else}${time %I}${endif}
 ${color2}${voffset -170}${offset 100}${time %M}${color}
-${offset 30}${voffset -250}${font Droid Sans:size=16}${time %A} ${time %B %d}
+${offset 30}${voffset -250}${font1}${time %A} ${time %B %d}
 #system
-${offset 20}${voffset 20}${font Roboto-Light:pixelsize=18}${color2}${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}mem ${offset 9}${color4}${memperc}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu cpu0}%
+${offset 20}${voffset 20}${font2}${color2}${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}mem ${offset 9}${color4}${memperc}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu cpu0}%
 ]];
