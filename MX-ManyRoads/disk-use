@@ -40,11 +40,17 @@ conky.config = {
 	no_buffers = true,
 	uppercase = false,
 
-	color0 = '40DA66',
-	color1 = 'blue',
-	color2 = '0011ff',
-	color3 = '1793d0',
+--	color0 = '40DA66', -- light green -- changed to color4
+--	color1 = 'blue', -- NOT USED
+--	color2 = '0011ff', -- NOT USED
+--	color3 = '1793d0', 
 
+	color0 = '000000',
+	color1 = 'Tan1',
+	color2 = 'lightgrey',
+	color3 = '1793d0',
+	color4 = '40DA66', -- light green
+	
 	pad_percents = 2,
 	top_name_width = 10,
 	minimum_width = 320, minimum_height = 100,
@@ -68,11 +74,11 @@ end
 
 conky.text = [[
 ${image img/hard-disk.png -p 0,0 -s 30x30}
-${offset 35}${font Good Times:size=12}${color Tan1}DISK USE ${color}${hr 2}${font}
+${offset 35}${font Good Times:size=12}${color1}DISK USE ${color}${hr 2}${font}
 ${voffset 5}${color}System SSD:
-${color}Used: ${color}${fs_used /} of${color3}${fs_size /} ${color}~ Free: ${color0}${fs_free /} ${color}or${color0} ${fs_free_perc /}% ${color}
+${color}Used: ${color}${fs_used /} of${color3}${fs_size /} ${color}~ Free: ${color4}${fs_free /} ${color}or${color4} ${fs_free_perc /}% ${color}
 ${lua gradbar {6, 77, "${fs_used_perc /}" ,100, 75, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}
 ${image img/trans-bg240.png -p 4,215 -s 226x11}
-${color lightgrey}Read: $color${diskio_read}${alignr}${color lightgrey}Write: ${color}${diskio_write}
+${color2}Read: $color${diskio_read}${alignr}${color2}Write: ${color}${diskio_write}
 ${color #000000}${diskiograph_read 12,145 000000 40DA66}${alignr}${color #000000}${diskiograph_write 12,145 000000 FFB207}
 ]];
