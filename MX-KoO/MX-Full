@@ -44,6 +44,7 @@ conky.config = {
 	color2 = 'E9E101',
 	color3 = '18FF00',
 	color4 = '66aaff',
+	color5 = 'FFF600',
 	
 -- network $templates
     if_up_strictness = 'address',
@@ -62,6 +63,8 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
    conky.config.own_window_transparent = true
    conky.config.own_window_argb_visual = false
 end
+
+
 
 conky.text = [[
 
