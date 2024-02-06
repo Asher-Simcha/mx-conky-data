@@ -45,8 +45,6 @@ conky.config = {
 	no_buffers = true,
 	uppercase = false,
 
-
-
 	pad_percents = 2,
 	top_name_width = 10,
 	minimum_width = 320, minimum_height = 485,
@@ -109,8 +107,8 @@ ${image img/information.png -p 0,115 -s 30x30}${offset 35}${font4}${color5}SYSTE
 ${font}${color1}${offset 30}${execi 3600 cat /etc/mx-version}
 #${goto 80}${color6}${font3}Manjaro${font}${color} | xfce 4.13
 ${goto 80}User: ${execi 3600 echo $USER}
-${goto 80}Kernel: $kernel $machine
-${goto 80}Uptime: $uptime
+${goto 80}Kernel: ${kernel} ${machine}
+${goto 80}Uptime: ${uptime}
 #${font6}${tab 90}${time %H:%M:%S}
 ${if_existing /sys/class/power_supply/BAT0}\
 ${goto 80}${color}Battery: ${color3}${battery_bar 10,100 BAT0} ${color0}${battery_percent BAT0}%
