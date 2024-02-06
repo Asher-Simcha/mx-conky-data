@@ -14,11 +14,12 @@ conky.config = {
 	own_window_transparent = false,
 	own_window_class = 'conky-semi',
 	use_xft = true,
-	font = 'cure:size=10',
+--	font = 'cure:size=10',
 
 --use_xft yes
 --xftfont Sansation:size=9
 	font = 'Rounded Elegance:size=10',
+	font1 = 'Good Times:size=12',
 	xftalpha = 0,
 	update_interval = 2,
 	cpu_avg_samples = 2,
@@ -72,9 +73,10 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
    conky.config.own_window_argb_visual = false
 end
 
+
 conky.text = [[
 ${image img/hard-disk.png -p 0,0 -s 30x30}
-${offset 35}${font Good Times:size=12}${color1}DISK USE ${color}${hr 2}${font}
+${offset 35}${font1}${color1}DISK USE ${color}${hr 2}${font}
 ${voffset 5}${color}System SSD:
 ${color}Used: ${color}${fs_used /} of${color3}${fs_size /} ${color}~ Free: ${color4}${fs_free /} ${color}or${color4} ${fs_free_perc /}% ${color}
 ${lua gradbar {6, 77, "${fs_used_perc /}" ,100, 75, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}
