@@ -11,11 +11,20 @@ conky.config = {
 	own_window_argb_value = 140,
 	out_to_console = false,
 	use_xft = true,
-	font = 'cure:size=10',
+--	font = 'cure:size=10',
 
 --use_xft yes
 --xftfont Sansation:size=9
 	font = 'Rounded Elegance:size=10',
+    font1 = 'Futurist Fixed-width:size=10:bold',
+    font2 = 'monofur:size=11',
+    font3 = 'Ubuntu-Title:size=11',
+    font4 = 'Good Times:size=12',
+    font5 = 'Infini:pixelsize=22',
+    font6 = 'DJB Get Digital:size=30',
+    font7 = 'Infini:pixelsize=42',
+    font8 = 'Infini:pixelsize=58',
+    font9 = 'Infini:pixelsize=80',
 	xftalpha = 0,
 	update_interval = 2,
 	cpu_avg_samples = 2,
@@ -91,18 +100,18 @@ end
 conky.text = [[
 #--- New Clock- version----
 # pmfix with backslash-escaped newline 
-${color5}${font Infini:pixelsize=80}${if_match "pmfix${time %p}" == "pmfix"}${time $template0}${else}${time %l:%M}${endif}\
-${font}${voffset -89}${offset 20}${color1}${font Infini:pixelsize=42}${time %d}${voffset -21}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 15}${font Infini:pixelsize=58}${offset -100}${time %a}${font}
+${color5}${font9}${if_match "pmfix${time %p}" == "pmfix"}${time $template0}${else}${time %l:%M}${endif}\
+${font}${voffset -89}${offset 20}${color1}${font7}${time %d}${voffset -21}${font4}${time  %b} ${time '%y}${font}${voffset 15}${font8}${offset -100}${time %a}${font}
 #-----------------------System information-----------------------
 ${voffset 15}
-${image img/information.png -p 0,115 -s 30x30}${offset 35}${font Good Times:size=12}${color5}SYSTEM INFORMATION ${color}${hr 2}${font}
+${image img/information.png -p 0,115 -s 30x30}${offset 35}${font4}${color5}SYSTEM INFORMATION ${color}${hr 2}${font}
 
 ${font}${color1}${offset 30}${execi 3600 cat /etc/mx-version}
-#${goto 80}${color6}${font Ubuntu-Title:size=11}Manjaro${font}${color} | xfce 4.13
+#${goto 80}${color6}${font3}Manjaro${font}${color} | xfce 4.13
 ${goto 80}User: ${execi 3600 echo $USER}
 ${goto 80}Kernel: $kernel $machine
 ${goto 80}Uptime: $uptime
-#${font DJB Get Digital:size=30}${tab 90}${time %H:%M:%S}
+#${font6}${tab 90}${time %H:%M:%S}
 ${if_existing /sys/class/power_supply/BAT0}\
 ${goto 80}${color}Battery: ${color3}${battery_bar 10,100 BAT0} ${color0}${battery_percent BAT0}%
 ${else}\
@@ -111,12 +120,12 @@ ${goto 80}${color}Battery: ${color3}${battery_bar 10,100 BAT1} ${color0}${batter
 ${endif}${endif}  ${image img/MX_logo.png -p 5,165 -s 64x64}
 #-----------------------Processes & Load information-----------------------
 ${image img/gearwheels.png -p 0,235 -s 30x30}
-${offset 35}${font Good Times:size=12}${color5}PROCESSES & LOAD ${color}${hr 2}${font}
+${offset 35}${font4}${color5}PROCESSES & LOAD ${color}${hr 2}${font}
 ${offset 5}${voffset 5}${color}Avg. Load: ${loadavg 1}
 #${running_processes} ${running_threads} ${processes}
 ${hr 1}${font}
-${color7}${font Futurist Fixed-width:size=10:bold}${color2}${offset 5}PROCESS          CPU${alignr}   MEMORY         ${offset -5}PID
-${voffset -10}${color0}${hr 1}${font}${color}${font monofur:size=11}
+${color7}${font1}${color2}${offset 5}PROCESS          CPU${alignr}   MEMORY         ${offset -5}PID
+${voffset -10}${color0}${hr 1}${font}${color}${font2}
 ${voffset -3}#
 ${offset 5}${top name 1} ${alignr}${top cpu 1}%      ${top mem_res 1}     ${alignr}${offset -5}${top pid 1}
 ${offset 5}${top name 2} ${alignr}${top cpu 2}%      ${top mem_res 2}     ${alignr}${offset -5}${top pid 2}
