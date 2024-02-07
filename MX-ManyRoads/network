@@ -44,6 +44,7 @@ conky.config = {
 	color1 = '393F3F',
 	color2 = 'white',
 	color3 = '1793d0',
+	color4 = 'Tan1',
 
 
 	pad_percents = 2,
@@ -75,7 +76,7 @@ end
 
 conky.text = [[
 ${image img/network.png -p 0,0 -s 30x30}
-${offset 35}${font Good Times:size=12}${color Tan1}NETWORK ${color}${hr 2}${font}
+${offset 35}${font Good Times:size=12}${color4}NETWORK ${color}${hr 2}${font}
 ${voffset -1}
 ${offset 5}WAN IP Address: ${texeci 3600 dig @resolver1.opendns.com A myip.opendns.com +short -4 2>/dev/null}
 ${voffset -1}
