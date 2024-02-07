@@ -14,11 +14,12 @@ conky.config = {
 	own_window_transparent = false,
 	own_window_class = 'conky-semi',
 	use_xft = true,
-	font = 'cure:size=10',
+--	font = 'cure:size=10',
 
 --use_xft yes
 --xftfont Sansation:size=9
 	font = 'Rounded Elegance:size=10',
+    font1 = 'Good Times:size=12',
 	xftalpha = 0,
 	update_interval = 2,
 	cpu_avg_samples = 2,
