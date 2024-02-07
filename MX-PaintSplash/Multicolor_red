@@ -38,13 +38,8 @@ conky.config = {
 -- Color scheme #
 	default_color = 'ffffff',
 
-	color1 = '0099CC',
-	color2 = '9933CC',
-	color3 = 'FFFFFF',
-	color4 = 'FF8800',
-	color5 = 'FFC000',
-	color6 = '000000',
-	color7 = 'DDDDDD',
+	color1 = '000000',
+	color2 = 'DDDDDD',
 
 	own_window_argb_value = 0,
 	own_window_argb_visual = true,
@@ -60,8 +55,8 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${image ./colors/red.png -s 205x154}${voffset 40}${offset 64}${color7}${time %A}${color6}
-${voffset -2}${offset 40}${font ubuntu:pixelsize=40}${time %H}${color}${font ubuntu light:pixelsize=38}:${color6}${time %M}$font$color
-${voffset 3}${offset 54}${font ubuntu:bold}${color}${time %d}${voffset -2}${color7}$font ${time  %B} ${time %Y}${voffset -33}
+${image ./colors/red.png -s 205x154}${voffset 40}${offset 64}${color2}${time %A}${color1}
+${voffset -2}${offset 40}${font ubuntu:pixelsize=40}${time %H}${color}${font ubuntu light:pixelsize=38}:${color1}${time %M}$font$color
+${voffset 3}${offset 54}${font ubuntu:bold}${color}${time %d}${voffset -2}${color2}$font ${time  %B} ${time %Y}${voffset -33}
 
 ]];
