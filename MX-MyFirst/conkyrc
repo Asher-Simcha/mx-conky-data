@@ -26,6 +26,9 @@ conky.config = {
 	use_xft = true,
 	xftalpha = 1,
 	font = 'Freesans:pixelsize=9',
+	font1 = 'Roboto-Light:pixelsize=12',
+	font2 = 'Roboto-Light:pixelsize=15',
+	font3 = 'Roboto-Light:pixelsize=65',
 
 --				fonts
 --	Blue Highway
@@ -66,11 +69,11 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${font Roboto-Light:pixelsize=15}${alignc}${if_match "pmfix${time %p}" == "pmfix"}${time $template5}${else}${time %A, %I:%M:%S}${endif}${font}
-${color2}${font Roboto-Light:pixelsize=65}${alignc}${time %d %B  |  %Y}${font}${color}
+${font2}${alignc}${if_match "pmfix${time %p}" == "pmfix"}${time $template5}${else}${time %A, %I:%M:%S}${endif}${font}
+${color2}${font3}${alignc}${time %d %B  |  %Y}${font}${color}
 
 
-${font Roboto-Light:pixelsize=12}${alignc} CPU: ${cpu cpu0}% ${offset 10}${font Roboto-Light:pixelsize=12}${alignc} MEM: ${memperc}% ${offset 10} NET:${offset 5}\
+${font1}${alignc} CPU: ${cpu cpu0}% ${offset 10}${font1}${alignc} MEM: ${memperc}% ${offset 10} NET:${offset 5}\
 ${if_up $template0}Up ${upspeed $template0} ${offset 5} Down ${downspeed $template0}${else}\
 ${if_up $template1}Up ${upspeed $template1} ${offset 5} Down ${downspeed $template1}${else}\
 ${if_up $template2}Up ${upspeed $template2} ${offset 5} Down ${downspeed $template2}${else}\
