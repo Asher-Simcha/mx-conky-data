@@ -47,7 +47,8 @@ conky.config = {
 	color1 = 'green',
 	color2 = 'white',
 	color3 = '1793d0',
-
+	color4 = 'Tan1',
+	color5 = 'lightgrey',
 
 	pad_percents = 2,
 	top_name_width = 7,
@@ -86,21 +87,21 @@ end
 
 conky.text = [[
 #-----------------------System information-----------------------
-${offset 5}${font Good Times:size=12}${color Tan1}SYSTEM INFORMATION ${color}${hr 2}${font}
+${offset 5}${font Good Times:size=12}${color4}SYSTEM INFORMATION ${color}${hr 2}${font}
 ${font}${color}${offset 6}${execi 86400 cat /etc/mx-version}
 #${goto 80}${color #34BE5B}${font Ubuntu-Title:size=11}Manjaro${font}${color} | xfce 4.13
 ${goto 10}Kernel: $kernel $machine
 ${goto 10}${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %a %d %b %Y - %I:%M}${endif}
 
 #-----------------------CPU-----------------------
-${offset 10}${font Good Times:size=12}${color Tan1}CPU ${color}${hr 2}${font}
+${offset 10}${font Good Times:size=12}${color4}CPU ${color}${hr 2}${font}
 ${font}${color}${execi 86400 grep -m1 -oP '^model name\s+:\s\K(.*)' /proc/cpuinfo}
-${color lightgrey}Temperature: ${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}${else}${if_existing /sys/class/hwmon/hwmon1/temp1_input}${eval ${hwmon 1 temp 1}}${endif}${endif}°C
+${color5}Temperature: ${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}${else}${if_existing /sys/class/hwmon/hwmon1/temp1_input}${eval ${hwmon 1 temp 1}}${endif}${endif}°C
 # CPU0
 Avg. Load ${goto 60} : ${cpu cpu0}% ${lua gradbar {100, 135, "${cpu cpu0}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 1} MHz
 
 #-----------------------Memory Load-----------------------
-${offset 10}${font Good Times:size=12}${color Tan1}MEMORY ${color}${hr 2}${font}
+${offset 10}${font Good Times:size=12}${color4}MEMORY ${color}${hr 2}${font}
 ${color}RAM Available${color}${alignr}$memmax 
 ${voffset -6}
 ${lua gradbar {6, 310, "${memperc}", 200, 310, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}
@@ -108,12 +109,12 @@ ${color}$mem used${alignr}${memperc}% used
 
 #-----------------------Processes & Load information-----------------------
 ${voffset +1}
-${offset 10}${font Good Times:size=12}${color Tan1}PROCESSES & LOAD ${color}${hr 2}${font}
+${offset 10}${font Good Times:size=12}${color4}PROCESSES & LOAD ${color}${hr 2}${font}
 ${offset 5}${voffset 5}${color}Avg. Load: ${loadavg 1}
 #${running_processes} ${running_threads} ${processes}
 
 ${hr 1}${font}
-${color lightgrey}${font Futurist Fixed-width:size=10:bold}${color7}${offset 5}PROCESS          CPU${alignr}   MEMORY         ${offset -5}PID
+${color5}${font Futurist Fixed-width:size=10:bold}${color7}${offset 5}PROCESS          CPU${alignr}   MEMORY         ${offset -5}PID
 ${voffset -10}${color0}${hr 1}${font}${color}${font monofur:size=11}
 ${voffset -3}#
 ${offset 5}${top name 1} ${alignr}${top cpu 1}%      ${top mem_res 1}     ${alignr}${offset -5}${top pid 1}
@@ -123,7 +124,7 @@ ${offset 5}${top name 4} ${alignr}${top cpu 4}%      ${top mem_res 4}     ${alig
 ${offset 5}${top name 5} ${alignr}${top cpu 5}%      ${top mem_res 5}     ${alignr}${offset -5}${top pid 5}
 
 #-----------------------Network-----------------------
-${offset 10}${font Good Times:size=12}${color Tan1}NETWORK ${color}${hr 2}${font}
+${offset 10}${font Good Times:size=12}${color4}NETWORK ${color}${hr 2}${font}
 ${voffset -1}
 ${if_up $template0}\
 ${goto 10}Wireless: ${color3} $template0${color}${goto 160}     IP local: ${color3}${addr $template0}
