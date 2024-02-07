@@ -35,6 +35,9 @@ conky.config = {
 	use_xft = true,
 	xftalpha = 0,
 	font = 'ubuntu:size=8',
+	font1 = 'ubuntu:bold',
+	font2 = 'ubuntu light:pixelsize=38',
+	font3 = 'ubuntu:pixelsize=40',
 -- Color scheme #
 	default_color = 'ffffff',
 
@@ -56,7 +59,7 @@ end
 
 conky.text = [[
 ${image ./colors/red.png -s 205x154}${voffset 40}${offset 64}${color2}${time %A}${color1}
-${voffset -2}${offset 40}${font ubuntu:pixelsize=40}${time %H}${color}${font ubuntu light:pixelsize=38}:${color1}${time %M}$font$color
-${voffset 3}${offset 54}${font ubuntu:bold}${color}${time %d}${voffset -2}${color2}$font ${time  %B} ${time %Y}${voffset -33}
+${voffset -2}${offset 40}${font3}${time %H}${color}${font2}:${color1}${time %M}$font$color
+${voffset 3}${offset 54}${font1}${color}${time %d}${voffset -2}${color2}$font ${time  %B} ${time %Y}${voffset -33}
 
 ]];
