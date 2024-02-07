@@ -14,11 +14,13 @@ conky.config = {
 	own_window_transparent = false,
 	own_window_class = 'conky-semi',
 	use_xft = true,
-	font = 'cure:size=10',
-
+--	font = 'cure:size=10',
+    
 --use_xft yes
 --xftfont Sansation:size=9
 	font = 'Rounded Elegance:size=10',
+    font1 = 'Rounded Elegance:size=10:BOLD',
+	font2 = 'Good Times:size=12',
 	xftalpha = 0,
 	update_interval = 2,
 	cpu_avg_samples = 2,
@@ -92,6 +94,7 @@ ${color}RAM Available${color}${alignr}$memmax
 ${lua gradbar {6, 55, "${memperc}", 150, 97, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}
 ${color}$mem used${alignr}${memperc}% used
 
-${color1}${font :BOLD}Swap File:${font}
+#${color1}${font :BOLD}Swap File:${font}
+${color1}${font1}Swap File:${font}
 ${offset 5}${color}${swap} used ${alignr} ${swapfree} free
 ]];
