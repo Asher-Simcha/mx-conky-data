@@ -90,7 +90,7 @@ end
 conky.text = [[
 ${image img/memory.png -p 0,0 -s 30x30}
 ${offset 35}${font2}${color4}MEMORY ${color}${hr 2}${font}
-${color}RAM Available${color}${alignr}$memmax 
+${color}RAM Available${color}${alignr}${memmax} 
 ${lua gradbar {6, 55, "${memperc}", 150, 97, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}
 ${color}$mem used${alignr}${memperc}% used
 
