@@ -59,7 +59,7 @@ end
 
 conky.text = [[
 ${image ./colors/pink.png -s 205x154}${voffset 40}${offset 64}${color2}${time %A}${color1}
-${voffset -2}${offset 40}${font3}${time %H}${color}${font2}:${color1}${time %M}$font$color
-${voffset 3}${offset 54}${font ubuntu:bold}${color}${time %d}${voffset -2}${color2}$font ${time  %B} ${time %Y}${voffset -33}
+${voffset -2}${offset 40}${font3}${time %H}${color}${font2}:${color1}${time %M}${font}${color}
+${voffset 3}${offset 54}${font1}${color}${time %d}${voffset -2}${color2}${font} ${time  %B} ${time %Y}${voffset -33}
 
 ]];
