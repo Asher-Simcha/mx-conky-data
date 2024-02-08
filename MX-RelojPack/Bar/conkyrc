@@ -74,9 +74,9 @@ conky.text = [[
 ${offset 477}${voffset 9}${font2}${color2}${if_match "pmfix${time %p}" == "pmfix"}${time %\
 H}${else}${time %I}${endif}${offset 13}${time %M}${font}
 ${font1}${color1}\
-${goto 414}${voffset -42}Cpu:$cpu%  ${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}°C${endif}\
+${goto 414}${voffset -42}Cpu:${cpu}%  ${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}°C${endif}\
 ${goto 414}${voffset 11}Core:${freq_g (1)}GHz\
-${goto 414}${voffset 11}Mem: $mem\
+${goto 414}${voffset 11}Mem: ${mem}\
 ${goto 414}${voffset 11}${template4}\
 ${goto 302}${voffset -34}HOME:${fs_used /home}\
 ${goto 302}${voffset 11}ROOT:${fs_used /root}\
