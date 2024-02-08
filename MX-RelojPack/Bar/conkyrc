@@ -5,6 +5,8 @@ conky.config = {
 	border_width = 5,
 	cpu_avg_samples = 2,
 	default_color = '000000',
+	color1 = 'white',
+	color2 = '232323',
 	default_outline_color = '000000',
 	default_shade_color = '000000',
 	double_buffer = true,
@@ -67,9 +69,9 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${offset 477}${voffset 9}${font OldSansBlack:size=22}${color #232323}${if_match "pmfix${time %p}" == "pmfix"}${time %\
+${offset 477}${voffset 9}${font OldSansBlack:size=22}${color2}${if_match "pmfix${time %p}" == "pmfix"}${time %\
 H}${else}${time %I}${endif}${offset 13}${time %M}${font}
-${font pftempestafivecondensed:size=6}${color white}\
+${font pftempestafivecondensed:size=6}${color1}\
 ${goto 414}${voffset -42}Cpu:$cpu%  ${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}°C${endif}\
 ${goto 414}${voffset 11}Core:${freq_g (1)}GHz\
 ${goto 414}${voffset 11}Mem: $mem\
