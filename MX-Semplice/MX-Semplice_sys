@@ -34,6 +34,11 @@ conky.config = {
 	override_utf8_locale = true,
 	use_xft = true,
 	font = 'Tall Films:size=10',
+	font1 = 'Roboto-Light:pixelsize=18',
+	font2 = 'Tall Films:size=30',
+	font3 = 'Tall Films:size=38',
+	font4 = 'Tall Films:size=55',
+	font5 = 'Tall Films:size=170',
 	xftalpha = 1,
 	uppercase = true,
 
@@ -62,8 +67,8 @@ end
 conky.text = [[
 
 
-${goto 20}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time ${template0}}${else}${time %I:%M}${endif}${font Tall Films:size=38}${time %P}
-${goto 60}${voffset 10}$color1${font Tall Films:size=55} ${time %A} ${font Tall Films:size=30} ${time %x}
+${goto 20}${font5} ${if_match "pmfix${time %p}" == "pmfix"}${time ${template0}}${else}${time %I:%M}${endif}${font3}${time %P}
+${goto 60}${voffset 10}$color1${font4} ${time %A} ${font2} ${time %x}
 #system
-${goto 75}${voffset -10}${font Roboto-Light:pixelsize=18}${color2}   ${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu}%
+${goto 75}${voffset -10}${font1}${color2}   ${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu}%
 ]];
