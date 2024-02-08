@@ -1,6 +1,10 @@
 conky.config = {
 	use_xft = true,
 	font = 'Segoe UI:size=8',
+	font1 = 'Pie charts for maps:size=12',
+	font2 = 'PizzaDude Bullets:size=12',
+	font3 = 'StyleBats:size=13',
+	font4 = 'Segoe UI:size=25',
 	alignment = 'top_right',
 	gap_x = 50,
 	gap_y = 50,
@@ -63,30 +67,30 @@ end
 conky.text = [[
 ${voffset 25}${alignc}Kernel: ${kernel}
 ${voffset 12}${alignc}Uptime: ${uptime}
-${voffset 58}${alignc -20}${color}${font Segoe UI:size=25}\
+${voffset 58}${alignc -20}${color}${font4}\
 ${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I}${endif}\
 ${voffset -2}${offset 10}:${offset 10}${voffset 2}${time %M}\
 ${color}${font}
 ${voffset 10}${alignc 20}${time %A}${offset 10}${time %d}${offset 10}${time %B}${color}
 ##SYS##
-${goto 50}${voffset 16}${font StyleBats:size=13}A${font}   ${voffset -3}CPU: ${alignr 50}${cpu cpu0}% 
-${goto 50}${voffset 10}${font StyleBats:size=13}g${font}   ${voffset -3}RAM: ${alignr 50}$memperc% 
+${goto 50}${voffset 16}${font3}A${font}   ${voffset -3}CPU: ${alignr 50}${cpu cpu0}% 
+${goto 50}${voffset 10}${font3}g${font}   ${voffset -3}RAM: ${alignr 50}$memperc% 
 
-${goto 50}${voffset -5}${font Pie charts for maps:size=12}7${font}   ${voffset -5}Root: ${alignr 53}${fs_used_perc /}%
+${goto 50}${voffset -5}${font1}7${font}   ${voffset -5}Root: ${alignr 53}${fs_used_perc /}%
 
 ##NET##
 ${if_up $template0}\
-${goto 50}${voffset -5}${font PizzaDude Bullets:size=12}N${font}   Upload:  ${goto 130}${totalup $template0}
-${goto 50}${voffset  8}${font PizzaDude Bullets:size=12}T${font}   Download:  ${goto 130}${totaldown $template0}\
+${goto 50}${voffset -5}${font2}N${font}   Upload:  ${goto 130}${totalup $template0}
+${goto 50}${voffset  8}${font2}T${font}   Download:  ${goto 130}${totaldown $template0}\
 ${else}${if_up $template1}\
-${goto 50}${voffset -5}${font PizzaDude Bullets:size=12}N${font}   Upload:  ${goto 130}${totalup $template1}
-${goto 50}${voffset  8}${font PizzaDude Bullets:size=12}T${font}   Download:  ${goto 130}${totaldown $template1}\
+${goto 50}${voffset -5}${font2}N${font}   Upload:  ${goto 130}${totalup $template1}
+${goto 50}${voffset  8}${font2}T${font}   Download:  ${goto 130}${totaldown $template1}\
 ${else}${if_up $template2}\
-${goto 50}${voffset -5}${font PizzaDude Bullets:size=12}N${font}   Upload:  ${goto 130}${totalup $template2}
-${goto 50}${voffset  8}${font PizzaDude Bullets:size=12}T${font}   Download:  ${goto 130}${totaldown $template2}\
+${goto 50}${voffset -5}${font2}N${font}   Upload:  ${goto 130}${totalup $template2}
+${goto 50}${voffset  8}${font2}T${font}   Download:  ${goto 130}${totaldown $template2}\
 ${else}\
-${goto 50}${voffset -5}${font PizzaDude Bullets:size=12}N${font}   Upload:  ${goto 130}${totalup $template3}
-${goto 50}${voffset  8}${font PizzaDude Bullets:size=12}T${font}   Download:  ${goto 130}${totaldown $template3}\
+${goto 50}${voffset -5}${font2}N${font}   Upload:  ${goto 130}${totalup $template3}
+${goto 50}${voffset  8}${font2}T${font}   Download:  ${goto 130}${totaldown $template3}\
 ${endif}${endif}${endif}
 
 ${image ./Conky/base.png -p 0,0 -s 200x350}
