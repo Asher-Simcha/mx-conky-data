@@ -10,6 +10,9 @@ conky.config = {
 
 -- Xft font when Xft is enabled
 	font = 'Roboto-Light:size=9',
+	font1 = 'clean:size=12',
+	font2 = 'BirchStd:pixelsize=45',
+	font3 = 'BirchStd:pixelsize=110',
 
 -- Text alpha when using Xft
 	xftalpha = 0.8,
@@ -119,12 +122,12 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${font clean:size=12}${color1}\
+${font1}${color1}\
 ${offset 170}CPU ${cpubar 5,75}\
 ${offset  85}HDD ${fs_bar 3,75}${offset 85}MEM ${membar 5,75}\
 ${template0}\
 ${offset  85}SWP ${swapbar 5,75}
 ##TIME##
-${font BirchStd:pixelsize=110}${color2}${alignc}${if_match "pmfix${time %p}" == "pmfix"}${time $template1}${else}${time %l:%M}${endif}${font}
-${voffset 10}${font BirchStd:pixelsize=45}${color3}${alignc}${time %A} | ${time %d} ${time  %B} ${font}
+${font3}${color2}${alignc}${if_match "pmfix${time %p}" == "pmfix"}${time $template1}${else}${time %l:%M}${endif}${font}
+${voffset 10}${font2}${color3}${alignc}${time %A} | ${time %d} ${time  %B} ${font}
 ]];
