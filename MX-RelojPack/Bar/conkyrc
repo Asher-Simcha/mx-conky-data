@@ -4,6 +4,8 @@ conky.config = {
 --border_margin 5
 	border_width = 5,
 	cpu_avg_samples = 2,
+	font1 = 'pftempestafivecondensed:size=6',
+    font2 = 'OldSansBlack:size=22',
 	default_color = '000000',
 	color1 = 'white',
 	color2 = '232323',
