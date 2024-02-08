@@ -2,6 +2,9 @@ conky.config = {
 -- Use Xft?
 	use_xft = true,
 	font = 'Freesans:pixelsize=9',
+	font1 = 'Roboto-Light:pixelsize=9.5',
+	font2 = 'Roboto-Light:size=16',
+	font3 = 'Pricedown:size=60',
 	xftalpha = 0.8,
 	text_buffer_size = 2048,
 	background = false,
@@ -102,18 +105,18 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${voffset 8}${font Pricedown:size=60}${color1}\
+${voffset 8}${font3}${color1}\
 ${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I:%M %p}${endif}${font}${voffset -}
-  ${voffset 8}${font Roboto-Light:size=16}${color2}${time %A} ${time %e} ${time %B}${font}${voffset -8}
-  ${voffset 8}${font Roboto-Light:pixelsize=9.5}${color3}MEM   ${color} $mem/$memmax   ${color3}HDD   ${color} ${fs_free /}/${fs_size /}${font}${voffset -8}
-  ${voffset 8}${font Roboto-Light:pixelsize=9.5}${color3}KERNEL   ${color} $kernel${font}${voffset -8}
-  ${voffset 8}${font Roboto-Light:pixelsize=9.5}${color3}CPU   ${color} $freq_g GHz   $cpu%   \
-${if_up $template0}${font Roboto-Light:pixelsize=9.5}${color3}WIFI   ${color}${wireless_link_qual $template0}${font}%${voffset -6}\
-${else}${font Roboto-Light:pixelsize=9.5}${color3}WIFI   ${color}${wireless_link_qual $template1}${font}%${voffset 1}${endif}\
+  ${voffset 8}${font2}${color2}${time %A} ${time %e} ${time %B}${font}${voffset -8}
+  ${voffset 8}${font1}${color3}MEM   ${color} $mem/$memmax   ${color3}HDD   ${color} ${fs_free /}/${fs_size /}${font}${voffset -8}
+  ${voffset 8}${font1}${color3}KERNEL   ${color} $kernel${font}${voffset -8}
+  ${voffset 8}${font1}${color3}CPU   ${color} $freq_g GHz   $cpu%   \
+${if_up $template0}${font1}${color3}WIFI   ${color}${wireless_link_qual $template0}${font}%${voffset -6}\
+${else}${font1}${color3}WIFI   ${color}${wireless_link_qual $template1}${font}%${voffset 1}${endif}\
   \
-${if_up $template0}${font Roboto-Light:pixelsize=9.5}${color3}WLAN   ${color}${downspeed $template0}/sec${else}\
-${if_up $template1}${font Roboto-Light:pixelsize=9.5}${color3}WLAN   ${color}${downspeed $template1}/sec${else}\
-${if_up $template2}${font Roboto-Light:pixelsize=9.5}${color3}WLAN   ${color}${downspeed $template2}/sec${else}\
-${font Roboto-Light:pixelsize=9.5}${color3}WLAN   ${color}${downspeed $template3}/sec\
+${if_up $template0}${font1}${color3}WLAN   ${color}${downspeed $template0}/sec${else}\
+${if_up $template1}${font1}${color3}WLAN   ${color}${downspeed $template1}/sec${else}\
+${if_up $template2}${font1}${color3}WLAN   ${color}${downspeed $template2}/sec${else}\
+${font1}${color3}WLAN   ${color}${downspeed $template3}/sec\
 ${endif}${endif}${endif}
 ]];
